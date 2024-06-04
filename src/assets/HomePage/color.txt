@@ -1,0 +1,6 @@
+Primary-color : #7D1EFF,
+Hover-color: #AA6DFF,
+Primary-secend: #6D21D5,
+link-hover:#919191,
+Secendary-color:#2B2B2B,
+section-secendry:#363636
