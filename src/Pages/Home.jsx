@@ -4,6 +4,9 @@ import BestExperience from "../Components/BestExperience/BestExperience"
 import Hero from "../Components/HeroArea/Hero"
 import SeeForYourself from "../Components/SeeForYourself/SeeForYourself"
 import SplendidFeatures from "../Components/SplendidFeatures/SplendidFeatures"
+import CustomersSay from "../Components/CustomersSay/CustomersSay"
+
+
 
 
 const Home = () => {
@@ -15,6 +18,7 @@ const Home = () => {
       <BestExperience/>
       <SeeForYourself/>
       <AdjustableStrap/>
+      <CustomersSay/>
     </div>
   )
 }

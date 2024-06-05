@@ -1,47 +1,43 @@
 
 /* slick slider customization */
-/* .slick-prev, 
-.slick-next{
-    visibility: hidden;
-} */
 
-.slick-slide{
+.slider-container .slick-slide{
     padding: 0 5px;
 }
 
-.slick-dots {
+.slider-container .slick-dots {
     position: absolute !important;
     bottom: -30px !important;
     left: -550px !important;
 }
 
-.slick-dots li button:before{
+.slider-container .slick-dots li button:before{
     font-size: 12px !important;
     color: #7D1EFF !important;
 
 }
 
-.slick-dots li.slick-active button:before {
+.slider-container .slick-dots li.slick-active button:before {
     color: #7D1EFF !important;
 }
 
 /* media query */
 
 @media only screen and (min-width: 375px) {
-    .slick-dots {
+    .slider-container .slick-dots {
         bottom: 0px;
         left: 0px;
     }
 }
 
 @media only screen and (min-width: 992px) {
-    .slick-dots {
+    .slider-container .slick-dots {
         bottom: 10px;
         left: 0px;
     }
 }
 @media only screen and (min-width: 1440px) {
-    .slick-dots {
+    .slider-container .slick-dots {
         bottom: 10px;
         left: -550px;
     }

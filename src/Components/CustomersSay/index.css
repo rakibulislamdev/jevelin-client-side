@@ -1,0 +1,15 @@
+.customer-slider-container .slick-slide{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+.customer-slider-bg-image{
+    background-image: url(../../assets/HomePage/customer-say.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

@@ -13,7 +13,7 @@ import watchEight from "../../../assets/HomePage/watch-8.jpg";
 import Modal from "../../Modal/Modal";
 import { useState } from "react";
 
-import './AboutSwiper.css'
+import './index.css'
 
 const watchLists = [
   { watch: watchOne },

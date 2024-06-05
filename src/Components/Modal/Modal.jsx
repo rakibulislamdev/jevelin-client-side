@@ -2,7 +2,7 @@
 import Slider from "react-slick";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { useState, useEffect } from "react";
-import './Modal.css'
+import './index.css'
 
 // eslint-disable-next-line react/prop-types
 const Modal = ({ show, onClose, images, startIndex }) => {
