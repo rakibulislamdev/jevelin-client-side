@@ -20,12 +20,12 @@ const AboutOurWatches = () => {
   }, []);
 
   return (
-    <section className="w-full h-full">
+    <section className="w-full">
       <div
         id="bg-div"
-        className="bg-img bg-fixed bg-cover bg-center bg-no-repeat w-full h-full"
+        className="bg-img bg-fixed bg-cover bg-center bg-no-repeat w-full pb-44"
       >
-        <div className="text-center pt-48 xl:pb-36 pb-16">
+        <div className="text-center pt-48 xl:pb-36">
           <h4 className="font-bold text-grayLight text-base">
             ABOUT OUR WATCHES
           </h4>
