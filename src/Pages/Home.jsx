@@ -5,6 +5,7 @@ import Hero from "../Components/HeroArea/Hero"
 import SeeForYourself from "../Components/SeeForYourself/SeeForYourself"
 import SplendidFeatures from "../Components/SplendidFeatures/SplendidFeatures"
 import CustomersSay from "../Components/CustomersSay/CustomersSay"
+import SocialMedia from "../Components/SocialMedia/SocialMedia"
 
 
 
@@ -19,6 +20,7 @@ const Home = () => {
       <SeeForYourself/>
       <AdjustableStrap/>
       <CustomersSay/>
+      <SocialMedia/>
     </div>
   )
 }

@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import AboutSwiper from "./AboutSwiper/AboutSwiper";
+import './index.css'
 
 const AboutOurWatches = () => {
   // bg scroll
