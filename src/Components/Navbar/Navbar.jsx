@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import logoWhite from "../../assets/HomePage/logo-white.png";
 import logoBlack from "../../assets/HomePage/logo-dark.png";
 import { MdOutlineShoppingCart } from "react-icons/md";
@@ -11,14 +11,22 @@ const Navbar = () => {
 
   const [scroll, setScroll] = useState(false);
 
+  const [currentPath, setCurrentPath] = useState("");
+
+
+  const location = useLocation();
+
   useEffect(() => {
     const handleScroll = () => {
       const offset = window.scrollY;
       setScroll(offset > 0);
     };
+
+    setCurrentPath(location.pathname);
+
     window.addEventListener("scroll", handleScroll);
     return () => window.addEventListener("scroll", handleScroll);
-  }, []);
+  }, [location.pathname]);
 
   const toggleMenu = () => {
     setOpenMenu(!openMenu);
@@ -60,10 +68,20 @@ const Navbar = () => {
 
   return (
     <header className="w-full fixed mx-auto top-0 z-10">
-      <nav className={`${scroll ? "shadow-lg bg-white" : "bg-none"}`}>
+      <nav
+        className={`${
+          scroll
+            ? "shadow-lg bg-white"
+            : currentPath === "/shop"
+            ? "bg-white"
+            : "bg-none"
+        }`}
+      >
         <div className="flex items-center justify-between font-bold px-14 py-6">
           <div>
             {scroll ? (
+              <img src={logoBlack} alt="logo" />
+            ) : currentPath === "/shop" ? (
               <img src={logoBlack} alt="logo" />
             ) : (
               <img src={logoWhite} alt="logo" />
@@ -72,6 +90,10 @@ const Navbar = () => {
 
           {/* desktop nav */}
           {scroll ? (
+            <div className="lg:flex justify-center items-center gap-10 hidden text-sm text-darkLight">
+              {navList}
+            </div>
+          ) : currentPath === "/shop" ? (
             <div className="lg:flex justify-center items-center gap-10 hidden text-sm text-darkLight">
               {navList}
             </div>
