@@ -1,0 +1,51 @@
+[
+    {
+      "color": "charcoal black",
+      "itemName": "body",
+      "price": "50",
+      "date": "2023-06-01"
+    },
+    {
+      "color": "golden-sunset",
+      "itemName": "strap",
+      "price": "25",
+      "date": "2023-06-02"
+    },
+    {
+      "color": "light-pink",
+      "itemName": "body",
+      "price": "45",
+      "date": "2023-06-03"
+    },
+    {
+      "color": "mint-green",
+      "itemName": "strap",
+      "price": "18",
+      "date": "2023-06-04"
+    },
+    {
+      "color": "pink-lemonade",
+      "itemName": "body",
+      "price": "50",
+      "date": "2023-06-05"
+    },
+    {
+      "color": "purple-berry",
+      "itemName": "strap",
+      "price": "22",
+      "date": "2023-06-06"
+    },
+    {
+      "color": "sky-blue",
+      "itemName": "body",
+      "price": "47",
+      "date": "2023-06-07"
+    },
+    {
+      "color": "snow-white",
+      "itemName": "strap",
+      "price": "23",
+      "date": "2023-06-08"
+    }
+  ]
+  

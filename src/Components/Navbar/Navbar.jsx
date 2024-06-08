@@ -1,4 +1,4 @@
-import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import logoWhite from "../../assets/HomePage/logo-white.png";
 import logoBlack from "../../assets/HomePage/logo-dark.png";
 import { MdOutlineShoppingCart } from "react-icons/md";
@@ -129,12 +129,14 @@ const Navbar = () => {
               {openMenu ? <CgMenuRight /> : <IoClose />}
             </div>
 
+            <Link to="/cart">
             <div className="relative">
-              <MdOutlineShoppingCart className="text-hover text-3xl cursor-pointer" />
-              <span className="absolute bg-primary text-white rounded-full px-2 -top-2 -right-2 flex justify-center items-center text-sm">
-                0
-              </span>
-            </div>
+            <MdOutlineShoppingCart className="text-hover text-3xl cursor-pointer" />
+            <span className="absolute bg-primary text-white rounded-full px-2 -top-2 -right-2 flex justify-center items-center text-sm">
+              0
+            </span>
+          </div>
+          </Link>
             <button className="bg-primary text-white text-sm uppercase rounded-full px-8 py-3 hidden lg:block hover:underline hover:bg-hover duration-500">
               Buy Now
             </button>
