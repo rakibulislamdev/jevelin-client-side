@@ -1,51 +1,58 @@
 [
-    {
+  {
       "color": "charcoal black",
       "itemName": "body",
       "price": "50",
-      "date": "2023-06-01"
-    },
-    {
+      "date": "2023-06-01",
+      "rating": 4.5
+  },
+  {
       "color": "golden-sunset",
       "itemName": "strap",
       "price": "25",
-      "date": "2023-06-02"
-    },
-    {
+      "date": "2023-06-02",
+      "rating": 4.0
+  },
+  {
       "color": "light-pink",
       "itemName": "body",
       "price": "45",
-      "date": "2023-06-03"
-    },
-    {
+      "date": "2023-06-03",
+      "rating": 4.2
+  },
+  {
       "color": "mint-green",
       "itemName": "strap",
       "price": "18",
-      "date": "2023-06-04"
-    },
-    {
+      "date": "2023-06-04",
+      "rating": 3.8
+  },
+  {
       "color": "pink-lemonade",
       "itemName": "body",
       "price": "50",
-      "date": "2023-06-05"
-    },
-    {
+      "date": "2023-06-05",
+      "rating": 4.7
+  },
+  {
       "color": "purple-berry",
       "itemName": "strap",
       "price": "22",
-      "date": "2023-06-06"
-    },
-    {
+      "date": "2023-06-06",
+      "rating": 4.1
+  },
+  {
       "color": "sky-blue",
       "itemName": "body",
       "price": "47",
-      "date": "2023-06-07"
-    },
-    {
+      "date": "2023-06-07",
+      "rating": 4.3
+  },
+  {
       "color": "snow-white",
       "itemName": "strap",
       "price": "23",
-      "date": "2023-06-08"
-    }
-  ]
-  
+      "date": "2023-06-08",
+      "rating": 4.0
+  }
+]

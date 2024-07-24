@@ -5,16 +5,32 @@ import { MdOutlineShoppingCart } from "react-icons/md";
 import { CgMenuRight } from "react-icons/cg";
 import { IoClose } from "react-icons/io5";
 import { useEffect, useState } from "react";
+import { FaEye, FaRegCheckCircle } from "react-icons/fa";
+import useCartsData from "../../Hooks/useCartsData";
+import { TiDelete } from "react-icons/ti";
+import usePublic from "../../Hooks/usePublic";
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(true);
-
   const [scroll, setScroll] = useState(false);
-
   const [currentPath, setCurrentPath] = useState("");
-
-
+  const [cartHover, setCartHover] = useState(false);
   const location = useLocation();
+
+  const handleMouseEnter = () => {
+    setCartHover(true);
+  };
+
+  const handleMouseLeave = () => {
+    setCartHover(false);
+  };
+
+  const cartOpen = () => {
+    setCartHover(true);
+  };
+  const cartClose = () => {
+    setCartHover(false);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,6 +55,19 @@ const Navbar = () => {
     { path: "/reviews", name: "Reviews" },
     { path: "/shop", name: "Shop" },
   ];
+
+  const publicAxios = usePublic()
+  const [cartsData, , refetch] = useCartsData();
+  
+
+  const handleDelete = async (id) => {
+    try {
+    const res = await publicAxios.delete(`/cart/${id}`)
+    refetch()
+    } catch (error) {
+      console.log(error.message)
+    }
+  }
 
   const navList = (
     <>
@@ -129,14 +158,62 @@ const Navbar = () => {
               {openMenu ? <CgMenuRight /> : <IoClose />}
             </div>
 
-            <Link to="/cart">
-            <div className="relative">
-            <MdOutlineShoppingCart className="text-hover text-3xl cursor-pointer" />
-            <span className="absolute bg-primary text-white rounded-full px-2 -top-2 -right-2 flex justify-center items-center text-sm">
-              0
-            </span>
-          </div>
-          </Link>
+            <div>
+              <div
+                className="relative"
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+              >
+                <Link to="/cart">
+                  <MdOutlineShoppingCart className="text-hover text-3xl cursor-pointer" />
+                </Link>
+                <span className="absolute bg-primary text-white rounded-full px-2 -top-2 -right-2 flex justify-center items-center text-sm">
+                  0
+                </span>
+              </div>
+
+              {/* cart hover */}
+              {cartHover && (
+                <div
+                  onMouseEnter={cartOpen}
+                  onMouseLeave={cartClose}
+                  className="bg-darkLight w-96 absolute top-[62px] right-[175px] animate-slideInFromTop transition-all ease-in-out duration-500"
+                >
+                  {/* cards */}
+                  {cartsData.map((cart, _id) => (
+                    <div key={_id} className="flex gap-20 p-5">
+                      <div className="w-20">
+                      <img className="w-20" src={cart.image} alt="" />
+                      </div>
+                      <div>
+                        <div className="flex items-center text-white">
+                          <p className="capitalize text-left">{cart.color}</p>
+                          <TiDelete onClick={() => handleDelete(cart._id)} className="text-xl ml-10" />
+                        </div>
+                        <div className="flex items-center text-white">
+                          <p className="text-sm font-thin">{cart.quantity} *</p>
+                          <p className="text-primary">£{cart.price}</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+
+                  <div className="text-white border-t border-b border-grayLight mt-7 p-5 text-center">
+                    <p>SUBTOTAL: £25.50</p>
+                  </div>
+                  <div className="text-white flex justify-center gap-5">
+                    <div className="flex items-center justify-center gap-2 pr-10 py-5 border-r border-link">
+                      <FaEye />
+                      <p>View Cart</p>
+                    </div>
+                    <div className="flex items-center gap-2 pl-5">
+                      <FaRegCheckCircle />
+                      <p>Check Out</p>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
             <button className="bg-primary text-white text-sm uppercase rounded-full px-8 py-3 hidden lg:block hover:underline hover:bg-hover duration-500">
               Buy Now
             </button>
